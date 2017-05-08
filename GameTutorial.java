@@ -2,6 +2,7 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.awt.event.*;
 import javax.swing.JFrame;
 
 /**
@@ -118,6 +119,8 @@ public class GameTutorial extends JFrame
         {
             y2 += 5;
         }
+        
+        
     }
 
     /**
