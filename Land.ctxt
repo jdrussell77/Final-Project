@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=posX\ posY\ width\ height\ shade
+comment0.target=Land(int,\ int,\ int,\ int,\ java.awt.Color)
+comment1.params=x\ y
+comment1.target=void\ move(int,\ int)
+comment2.params=page
+comment2.target=void\ draw(java.awt.Graphics)
+numComments=3

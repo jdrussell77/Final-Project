@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=col\ numb
+comment0.target=Player(java.awt.Color,\ int)
+comment0.text=\r\n\ Default\ constructor\ for\ objects\ of\ class\ Player\r\n
+comment1.params=
+comment1.target=java.awt.Color\ getColor()
+comment2.params=
+comment2.target=int\ getNum()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

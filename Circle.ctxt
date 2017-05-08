@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=x\ y\ rad\ shade
+comment0.target=Circle(int,\ int,\ int,\ java.awt.Color)
+comment1.params=p
+comment1.target=void\ draw(java.awt.Graphics)
+comment2.params=x\ y
+comment2.target=void\ move(int,\ int)
+comment3.params=
+comment3.target=double\ getRadius()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5
