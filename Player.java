@@ -8,10 +8,18 @@ public class Player
     /**
      * Default constructor for objects of class Player
      */
-    public Player(Color col,int numb)
+    public Player()
+    {
+        color=null;
+        num=0;
+    }
+    public void setColor(Color col)
     {
         color=col;
-        num=numb;
+    }
+    public void setNum(int p)
+    {
+        num=p;
     }
     public Color getColor()
     {
