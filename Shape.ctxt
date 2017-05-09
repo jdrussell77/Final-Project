@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=Shape(int,\ int)
+comment1.params=
+comment1.target=int\ getXpos()
+comment2.params=
+comment2.target=int\ getYpos()
+comment3.params=xLoc\ yLoc
+comment3.target=void\ move(int,\ int)
+comment4.params=p
+comment4.target=void\ draw(java.awt.Graphics)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6
