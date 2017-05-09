@@ -18,6 +18,10 @@ public class Circle extends Shape
         p.setColor (color);//Color of circle
         p.fillOval (xPos, yPos, radius, radius);
     }
+    public Color getColor()
+    {
+        return color;
+    }
     public void move(int x, int y)
     {
         super.xPos=x;
