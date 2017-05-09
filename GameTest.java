@@ -8,12 +8,12 @@ import javax.swing.JFrame;
 /**
  * Main class for the game
  */
-public class GameTutorial extends JFrame
+public class GameTest extends JFrame
 {
     boolean isRunning = true;
     int fps = 30;
-    int windowWidth = 500;
-    int windowHeight = 500;
+    int windowWidth = 800;
+    int windowHeight = 600;
 
     BufferedImage backBuffer;
     Insets insets;
@@ -27,7 +27,7 @@ public class GameTutorial extends JFrame
 
     public static void main(String[] args)
     {
-        GameTutorial game = new GameTutorial();
+        GameTest game = new GameTest();
         game.run();
         System.exit(0);
     }
@@ -67,7 +67,7 @@ public class GameTutorial extends JFrame
      */
     void initialize()
     {
-        setTitle("Game Tutorial");
+        setTitle("Test");
         setSize(windowWidth, windowHeight);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
