@@ -3,19 +3,27 @@
 import java.awt.*;  
 import java.applet.*;  
   
-  
+
 public class DisplayImage extends Applet {  
-  
-  Image picture, pngpic;  
+  Image bgimage;
   
   public void init() {  
-    picture = getImage(getDocumentBase(),"fuckme.jpg");  
-    pngpic = getImage(getDocumentBase(),"thisshit.png");  
+    //gets an image
+    bgimage = getImage(getDocumentBase(),"spacebackground.png"); 
+    
+    //sets applet size
+    setSize (900, 600);
+    
+    Button button1 = new Button("Button 1");
+        button1
+        add(button1);
   }  
     
   public void paint(Graphics g) {  
-    g.drawImage(picture, 0,0, this);
-    g.drawImage(pngpic, 0, 0, this);
+    //draws the background image
+    g.drawImage(bgimage, 0,0, this);
+    
+    Button button1;
     
   }  
       
