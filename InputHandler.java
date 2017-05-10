@@ -16,32 +16,6 @@ public class InputHandler implements KeyListener
         c.addKeyListener(this);
     }
 
-    public void mousePressed(MouseEvent e) 
-    {
-        
-    }
-
-    public void mouseReleased(MouseEvent e) 
-    {
-        
-    }
-
-    public void mouseEntered(MouseEvent e) 
-    {
-       
-    }
-
-    public void mouseExited(MouseEvent e) 
-    {
-        
-    }
-
-    public void mouseClicked(MouseEvent e) 
-    {
-    
-        
-    }
-
     /**
      * Checks whether a specific key is down
      * @param keyCode The key to check
