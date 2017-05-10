@@ -1,9 +1,11 @@
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.awt.event.*;
 import javax.swing.JFrame;
+import javax.sound.sampled.*;
+import java.io.*;
+import sun.audio.*;
 
 /**
  * Main class for the game
@@ -38,6 +40,7 @@ public class GameTest extends JFrame
     public void run()
     {
         initialize();
+        playSound();
 
         while(isRunning)
         {
@@ -119,8 +122,21 @@ public class GameTest extends JFrame
         {
             y2 += 5;
         }
-        
-        
+
+    }
+
+    private void playSound() 
+    {
+        try
+        {
+            InputStream inputStream = getClass().getResourceAsStream("space.wav");
+            AudioStream audioStream = new AudioStream(inputStream);
+            AudioPlayer.player.start(audioStream);
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
 
     /**
