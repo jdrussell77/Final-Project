@@ -6,7 +6,7 @@ import java.applet.*;
 
 public class DisplayImage extends Applet {  
   Image bgimage, leftllama, rightalpaca, asteroid1, asteroid2, gameboardborder, header,
-            currentplayergraphic, player1icon, player2icon, restartbutton, menubutton;
+            currentplayergraphic, player1icon, player2icon, restartbutton, menubutton, appletborder;
   Player p1 = new Player();
   Player p2 = new Player();
   
@@ -19,6 +19,7 @@ public class DisplayImage extends Applet {
     setSize (900, 600);
       
     //images that will be used
+    appletborder = getImage(getDocumentBase(), "appletborder.png");
     bgimage = getImage(getDocumentBase(),"spacebackground.png"); 
     leftllama = getImage(getDocumentBase(), "leftllama.png");
     rightalpaca = getImage(getDocumentBase(), "rightalpaca.png");
@@ -40,17 +41,23 @@ public class DisplayImage extends Applet {
   public void paint(Graphics g) {  
     //draws the graphics
     g.drawImage(bgimage, 0,0, this);
-    g.drawImage(asteroid1, x, y, this);
-    g.drawImage(asteroid2, x, y, this);
-    g.drawImage(leftllama, x, y, this);
-    g.drawImage(rightalpaca, x, y, this);
+    g.drawImage(appletborder, 0,0, this);
+    g.drawImage(asteroid1, (25/3), (25/3), this);
+    g.drawImage(asteroid2, (1850/3), (25/3), this);
+    g.drawImage(leftllama, (25/3), (150), this);
+    g.drawImage(rightalpaca, (2000/3), (150), this);
+    g.drawImage(header, (800/3), (100/3), this);
+    g.drawImage(gameboardborder, 275, 175, this);
+    g.drawImage(currentplayergraphic, (1000/3), (400/3), this);
+    g.drawImage(restartbutton, 100, (1600/3), this);
+    g.drawImage(menubutton, 700, (1600/3), this);
     
     if (game.whosUp().getColor()==p1.getColor())
-        g.drawImage( player1icon, x, y, this);
+        g.drawImage( player1icon, 0, 0, this);
     else 
-         g.drawImage( player2icon, x, y, this);
+         g.drawImage( player2icon, 0, 0, this);
          
-    
+    if (game.)
    
     
     
