@@ -7,7 +7,7 @@ public class DisplayImage extends Applet {
     currentplayergraphic, player1icon, player2icon, restartbutton, menubutton, appletborder;
     private Player p1 = new Player();
     private Player p2 = new Player();
-    private Grid grid=new Grid(350,200,200,350,Color.white);
+    private Grid grid=new Grid(300,(700/3),300,350,Color.white);
     private Game game= new Game(p1, p2);
     private Circle [][] board=new Circle[6][7];
     public void init() {  
