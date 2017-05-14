@@ -12,6 +12,8 @@ public class Game
     private Circle [][] board=new Circle[6][7];
     /**
      * Default constructor for objects of class Game
+     * @param Player a, Player b. Takes two player objects
+     * assigns the player objects by number
      */
     public Game(Player a, Player b)
     {
@@ -21,17 +23,25 @@ public class Game
         p1.setNum(1);
         p2.setNum(2);
     }
-
+    /**
+     * @return player1 object
+     */
     public Player getPlayer1()
     {
         return p1;
     }
-
+    /**
+     * @return player2 object
+     */
     public Player getPlayer2()
     {
         return p2;
     }
-
+    /**
+     * Checks to see if the board is full
+     * @return true if full
+     * @return false if not full
+     */
     public boolean isFull()
     {
         for(int r=0;r<board.length;r++)
@@ -44,7 +54,11 @@ public class Game
         }
         return true;
     }
-
+    /**
+     * Checks to see if four pieces are in a row (same color) horizontally
+     * @return true if there is four in a row
+     * @return false if there isnt four in a row
+     */
     public boolean HorizontalCheck()
     {
         for(int r=0;r<board.length;r++)
@@ -57,7 +71,11 @@ public class Game
         }
         return false;
     }
-
+    /**
+     * Checks to see if four pieces are in a row (same color) vertically
+     * @return true if there is a win
+     * @return false if there isnt a win
+     */
     public boolean VerticalCheck()
     {
         for(int r=0;r<board.length-3;r++)
@@ -70,7 +88,12 @@ public class Game
         }
         return false;
     }
-
+    /**
+     * Checks to see if four pieces are in a row (same color) diagonally
+     * There are two types of diagonals so it checks both ways
+     * @return true if there is a win
+     * @return false if there isnt a win
+     */
     public boolean DiagonalsCheck()
     {
         // ascendingDiagonalCheck 
@@ -89,10 +112,11 @@ public class Game
         }
         return false;
     }
-
-    /*
+    /**
      * Checks the state of the game (if someone has won and who)
      * should be run after each round
+     * @return true if someone has won or if board is full
+     * @return false if nobody has won or board is full
      */
     public boolean isGameOver()
     {
@@ -113,7 +137,10 @@ public class Game
             
         return false;
     }
-
+    /**
+     * Swaps the status of boolean variables a and b (these determine who is up. true is up next)
+     * should be run after each round
+     */
     public void next()
     {
         if (a)
@@ -127,7 +154,9 @@ public class Game
             b=false;
         }
     }
-
+    /**
+     * @return the Player object of who is up next
+     */
     public Player whosUp()
     {
         if(a)
@@ -135,7 +164,10 @@ public class Game
         else
             return p2;
     }
-
+    /**
+     * Makes a new Circle object at the bottom of the desired column
+     * @param int col. The desired column the piece is to be placed
+     */
     public void move(int col)
     {
         if(this.isColumnFull(col)==false)// move is valid if the top column isn't full
@@ -144,19 +176,31 @@ public class Game
             board[openRow][col]=new Circle(findXcord(col),findYcord(openRow),radius,this.whosUp().getColor());
         }
     }
-
+    /**
+     * Finds the x coordinate of a new Circle object on the board
+     * @param int col. Desired column
+     * @return int cooridnate x
+     */
     public int findXcord(int col)
     {
         int x=321+(int)(42.857*col);
         return x;
     }
-
+    /**
+     * Finds the x coordinate of a new Circle object on the board
+     * @param int row
+     * @return int cooridnate y
+     */
     public int findYcord(int row)
     {
         int y=229+(int)(58.333*row);
         return y;
     }
-
+    /**
+     * Finds the last available row in a column
+     * @param int col
+     * @return int row
+     */
     public int findOpenRow(int col)
     {
         int r=0;
@@ -167,14 +211,23 @@ public class Game
         }
         return r-1;
     }
-
+    /**
+     * Determines if the column is full
+     * @param int col
+     * @return boolean state of column
+     * false means column isnt full
+     * true means it is full
+     */
     public boolean isColumnFull(int col)
     {
         if(board[0][col].getColor()==null)
             return false;
         return true;
     }
-
+    /**
+     * Returns the game board so that it can be re-drawn after every turn
+     * @return Circle[][] board
+     */
     public Circle[][] getBoard()
     {
         return board;
