@@ -50,7 +50,7 @@ public class DisplayImage extends Applet {
     {  
         //draws the graphics
         g.drawImage(bgimage, 0,0, this);
-        g.fillRect(300, (700/3),300, 350);
+        g.fillRect(300, (700/3),300, 350); 
         //g.drawImage(appletborder, 0,0, this); 
         g.drawImage(asteroid2, ((1850/3))+10, 10, this); //done
         g.drawImage(leftllama, 0, (150+(25/3)), this); //done
@@ -73,18 +73,14 @@ public class DisplayImage extends Applet {
             g.drawImage( player2icon, (1000/3), ((400/3)+25), this);
 
         
-            
-        game.move(0);
         game.next();
         game.move(0);
+        game.next();
+        game.move(1);
+        game.next();
+        game.move(2);
+        game.next();
+        game.move(2);
         game.DrawBoard(g);
-        /**
-         * SASHA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-         * TEXT ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-         * Jake should have given you my number
-         * 630-445-3474
-         * but there
-         * this project needs to be finessed
-         */
     }  
 }

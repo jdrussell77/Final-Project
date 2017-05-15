@@ -174,7 +174,6 @@ public class Game
         if(this.isColumnFull(col)==false)// move is valid if the top column isn't full
         {
             int openRow=this.findOpenRow(col);//Finds the lowest point in column
-            System.out.println(openRow);
             board[openRow][col]=new Circle(findXcord(col),findYcord(openRow),radius,this.whosUp().getColor());
         }
     }
@@ -185,7 +184,7 @@ public class Game
      */
     public int findXcord(int col)
     {
-        int x=356+(int)(42.857*col);
+        int x=(300+((300/7))/2)+(int)(42.857*col);
         return x;
     }
     /**
@@ -195,7 +194,7 @@ public class Game
      */
     public int findYcord(int row)
     {
-        int y=229+(int)(58.333*row);
+        int y=((700/3)+ ((350/6))/2)+(int)(58.333*row);
         return y;
     }
     /**

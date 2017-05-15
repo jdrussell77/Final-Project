@@ -4,10 +4,10 @@ Tell the reader (someone who does not know anything about this project)
 all she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
+PROJECT TITLE: C4melid Connect
 PURPOSE OF PROJECT:
 VERSION or DATE:
 DEPENDENCIES:
-HOW TO START THIS PROJECT:
-AUTHORS:
+HOW TO START THIS PROJECT: compile and run DisplayImage
+AUTHORS: Sam, Sasha, Jake
 USER INSTRUCTIONS:
