@@ -1,6 +1,8 @@
 
 import java.awt.*;  
 import java.applet.*;  
+import java.io.*;
+
 
 public class DisplayImage extends Applet {  
     //graphisc
@@ -38,6 +40,10 @@ public class DisplayImage extends Applet {
         player2icon = getImage(getDocumentBase(), "player2icon.png");
         //restartbutton = getImage(getDocumentBase(), "restartbutton.png");
         //menubutton = getImage(getDocumentBase(), "menubutton.png");
+
+		//music
+		AudioClip music = getAudioClip(getDocumentBase(), "space.wav");
+    	music.play();
 
     }  
     public void paint(Graphics g) 
