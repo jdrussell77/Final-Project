@@ -44,6 +44,7 @@ public class DisplayImage extends Applet {
     {  
         //draws the graphics
         g.drawImage(bgimage, 0,0, this);
+        g.fillRect(300, (700/3),300, 350);
         g.drawImage(appletborder, 0,0, this);
         g.drawImage(asteroid1, (25/3), (25/3), this);
         g.drawImage(asteroid2, (1850/3), (25/3), this);
