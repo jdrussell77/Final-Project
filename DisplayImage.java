@@ -25,7 +25,7 @@ public class DisplayImage extends Applet {
         setSize (900, 600);
 
         //assigns images that will be used to variables
-        appletborder = getImage(getDocumentBase(), "appletborder.png");
+        //appletborder = getImage(getDocumentBase(), "appletborder.png");
         bgimage = getImage(getDocumentBase(),"spacebackground.png"); 
         leftllama = getImage(getDocumentBase(), "leftllama.png");
         rightalpaca = getImage(getDocumentBase(), "rightalpaca.png");
@@ -45,14 +45,13 @@ public class DisplayImage extends Applet {
         //draws the graphics
         g.drawImage(bgimage, 0,0, this);
         g.fillRect(300, (700/3),300, 350);
-        g.drawImage(appletborder, 0,0, this);
-        g.drawImage(asteroid1, (25/3), (25/3), this);
-        g.drawImage(asteroid2, (1850/3), (25/3), this);
-        g.drawImage(leftllama, (25/3), (150), this);
-        g.drawImage(rightalpaca, (2000/3), (150), this);
+        //g.drawImage(appletborder, 0,0, this); 
+        g.drawImage(asteroid1, -20, (25/3), this); //done
+        g.drawImage(asteroid2, (1850/3), (25/3), this); //done
+        g.drawImage(leftllama, (25/3), (150), this); //done
+        g.drawImage(rightalpaca, (2000/3), (150), this); //done
         g.drawImage(header, (800/3), (100/3), this);
-        g.drawImage(gameboardborder, 275, 175, this);
-        g.drawImage(currentplayergraphic, (1000/3), (400/3), this);
+        g.drawImage(gameboardborder, 290, ((700/3)-10), this); //done
         //g.drawImage(restartbutton, 100, (1600/3), this);
         //g.drawImage(menubutton, 700, (1600/3), this);
         
@@ -61,9 +60,9 @@ public class DisplayImage extends Applet {
         //draws the current player graphics
         grid.draw(g);
         if (game.whosUp().getColor()==p1.getColor())
-            g.drawImage( player1icon, 0, 0, this);
+            g.drawImage( player1icon, (1000/3), (400/3), this);
         else 
-            g.drawImage( player2icon, 0, 0, this);
+            g.drawImage( player2icon, (1000/3), (400/3), this);
 
         
             
