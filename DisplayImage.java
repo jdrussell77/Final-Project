@@ -28,10 +28,10 @@ public class DisplayImage extends Applet {
         player2icon = getImage(getDocumentBase(), "player2icon.png");
         restartbutton = getImage(getDocumentBase(), "restartbutton.png");
         menubutton = getImage(getDocumentBase(), "menubutton.png");
-        
-    
+
     }  
-    public void paint(Graphics g) {  
+    public void paint(Graphics g) 
+    {  
         //draws the graphics
         g.drawImage(bgimage, 0,0, this);
         g.drawImage(appletborder, 0,0, this);
@@ -49,11 +49,11 @@ public class DisplayImage extends Applet {
             g.drawImage( player1icon, 0, 0, this);
         else 
             g.drawImage( player2icon, 0, 0, this);
-        
+
         game.move(0);
         game.next();
         game.move(0);
         game.DrawBoard(g);
-        
+
     }  
 }
