@@ -54,6 +54,13 @@ public class DisplayImage extends Applet {
         game.next();
         game.move(0);
         game.DrawBoard(g);
-
+        /**
+         * SASHA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         * TEXT ME!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         * Jake should have given you my number
+         * 630-445-3474
+         * but there
+         * this project needs to be finessed
+         */
     }  
 }
