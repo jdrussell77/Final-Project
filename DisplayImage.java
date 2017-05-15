@@ -32,9 +32,9 @@ public class DisplayImage extends Applet {
         leftllama = getImage(getDocumentBase(), "leftllama.png");
         rightalpaca = getImage(getDocumentBase(), "rightalpaca.png");
         asteroid1 = getImage(getDocumentBase(), "asteroid1.png");
-        asteroid2 = getImage(getDocumentBase(), "asteroid2.png");
+        asteroid2 = getImage(getDocumentBase(), "asteroid4.png");
         gameboardborder = getImage(getDocumentBase(), "border.png");
-        header = getImage(getDocumentBase(), "header2.png");
+        header = getImage(getDocumentBase(), "header5.png");
         currentplayergraphic = getImage(getDocumentBase(), "currentplayer.png");
         player1icon = getImage(getDocumentBase(), "player1icon.png");
         player2icon = getImage(getDocumentBase(), "player2icon.png");
@@ -52,11 +52,11 @@ public class DisplayImage extends Applet {
         g.drawImage(bgimage, 0,0, this);
         g.fillRect(300, (700/3),300, 350);
         //g.drawImage(appletborder, 0,0, this); 
-        g.drawImage(asteroid1, -30, 0, this); //done
-        g.drawImage(asteroid2, ((1850/3))+10, 0, this); //done
+        g.drawImage(asteroid2, ((1850/3))+10, 10, this); //done
         g.drawImage(leftllama, 0, (150+(25/3)), this); //done
         g.drawImage(rightalpaca, (675), (150), this); //done
-        g.drawImage(header, ((800/3)-60), (100/3), this);
+        g.drawImage(header, ((800/3)-50), (100/3), this);
+		g.drawImage(asteroid1, -30, 0, this); //done
         g.drawImage(gameboardborder, 290, ((700/3)-10), this); //done
 
 		
