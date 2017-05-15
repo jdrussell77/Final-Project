@@ -5,14 +5,12 @@ import java.applet.*;
 public class DisplayImage extends Applet {  
     private Image bgimage, leftllama, rightalpaca, asteroid1, asteroid2, gameboardborder, header,
     currentplayergraphic, player1icon, player2icon, restartbutton, menubutton, appletborder;
-    private Player p1 = new Player();
-    private Player p2 = new Player();
+    private Player p1 = new Player(Color.red);
+    private Player p2 = new Player(Color.yellow);
+    private Game game=new Game(p1, p2);
     private Grid grid=new Grid(350,200,200,350,Color.white);
-    private Game game= new Game(p1, p2);
     private Circle [][] board=new Circle[6][7];
     public void init() {  
-        p1.setColor(Color.red);
-        p2.setColor(Color.yellow);
         //sets applet size
         setSize (900, 600);
 
@@ -52,13 +50,10 @@ public class DisplayImage extends Applet {
         else 
             g.drawImage( player2icon, 0, 0, this);
         
-        //Draws the pieces
-        for(int r=0;r<game.getBoard().length;r++)
-        {
-            for(int c=0;c<game.getBoard()[r].length;c++)
-            {
-                game.getBoard()[r][c].draw(g);
-            }
-        }
+        game.move(0);
+        game.next();
+        game.move(0);
+        game.DrawBoard(g);
+        
     }  
 }

@@ -34,6 +34,6 @@ public class Circle extends Shape
     public String toString()
     {
         return super.toString() +
-        "\nRadius: "+getRadius();
+        "\nRadius: "+getRadius()+"\nColor: "+getColor();
     }
 }//end of Circle

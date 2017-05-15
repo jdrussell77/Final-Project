@@ -10,6 +10,7 @@ public class Game
     private boolean a=true;
     private boolean b=true;
     private Circle [][] board=new Circle[6][7];
+    
     /**
      * Default constructor for objects of class Game
      * @param Player a, Player b. Takes two player objects
@@ -48,7 +49,7 @@ public class Game
         {
             for(int c=0;c<board[r].length;c++)
             {
-                if(board[r][c].getColor()==null)
+                if(board[r][c]==null)
                     return false;
             }
         }
@@ -173,6 +174,7 @@ public class Game
         if(this.isColumnFull(col)==false)// move is valid if the top column isn't full
         {
             int openRow=this.findOpenRow(col);//Finds the lowest point in column
+            System.out.println(openRow);
             board[openRow][col]=new Circle(findXcord(col),findYcord(openRow),radius,this.whosUp().getColor());
         }
     }
@@ -183,7 +185,7 @@ public class Game
      */
     public int findXcord(int col)
     {
-        int x=321+(int)(42.857*col);
+        int x=356+(int)(42.857*col);
         return x;
     }
     /**
@@ -204,11 +206,17 @@ public class Game
     public int findOpenRow(int col)
     {
         int r=0;
-        if(board[r][col].getColor()!=null)
+        if(board[r][col]!=null)
             return -1;
-        for( ;board[r][col].getColor()==null;r++)
+        while(board[r][col]==null)
         {
+            if(r==5)
+            {
+                return 5;
+            }
+            r++;
         }
+
         return r-1;
     }
     /**
@@ -220,16 +228,30 @@ public class Game
      */
     public boolean isColumnFull(int col)
     {
-        if(board[0][col].getColor()==null)
+        if(board[0][col]==null)
             return false;
         return true;
     }
     /**
-     * Returns the game board so that it can be re-drawn after every turn
+     * Returns the game board
      * @return Circle[][] board
      */
     public Circle[][] getBoard()
     {
         return board;
+    }
+    /**
+     * Draws the game board
+     */
+    public void DrawBoard(Graphics g)
+    {
+        //Draws the pieces
+        for(int r=0;r<board.length;r++)
+        {
+            for(int c=0;c<board[r].length;c++)
+            {
+                board[r][c].draw(g);
+            }
+        }
     }
 }

@@ -13,6 +13,11 @@ public class Player
         color=null;
         num=0;
     }
+    public Player(Color col)
+    {
+        color=col;
+        num=0;
+    }
     public void setColor(Color col)
     {
         color=col;
