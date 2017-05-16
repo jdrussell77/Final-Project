@@ -38,6 +38,14 @@ public class DisplayImage extends Applet implements ActionListener{
         col7=new Button("Col 7");
         
         add(col1);add(col2);add(col3);add(col4);add(col5);add(col6);add(col7);
+        col1.setBounds(303,((700/3)-30),40,20);
+        col2.setBounds(347,((700/3)-30),40,20);
+        col3.setBounds(391,((700/3)-30),40,20);
+        col4.setBounds(435,((700/3)-30),40,20);
+        col5.setBounds(479,((700/3)-30),40,20);
+        col6.setBounds(523,((700/3)-30),40,20);
+        col7.setBounds(566,((700/3)-30),40,20);
+        setLayout(null);
         
         col1.addActionListener(this);
         col2.addActionListener(this);
