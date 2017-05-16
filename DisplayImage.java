@@ -60,9 +60,9 @@ public class DisplayImage extends Applet implements ActionListener{
         //restartbutton = getImage(getDocumentBase(), "restartbutton.png");
         //menubutton = getImage(getDocumentBase(), "menubutton.png");
 
-		//music
-		AudioClip music = getAudioClip(getDocumentBase(), "space.wav");
-    	music.play();
+        //music
+        AudioClip music = getAudioClip(getDocumentBase(), "space.wav");
+        music.play();
 
     }  
     public void paint(Graphics g) 
@@ -75,10 +75,10 @@ public class DisplayImage extends Applet implements ActionListener{
         g.drawImage(leftllama, 0, (150+(25/3)), this); //done
         g.drawImage(rightalpaca, (675), (150), this); //done
         g.drawImage(header, ((800/3)-50), (100/3), this);
-		g.drawImage(asteroid1, -30, 0, this); //done
+        g.drawImage(asteroid1, -30, 0, this); //done
         g.drawImage(gameboardborder, 290, ((700/3)-10), this); //done
 
-		
+        
         //g.drawImage(restartbutton, 100, (1600/3), this);
         //g.drawImage(menubutton, 700, (1600/3), this);
         
