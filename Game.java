@@ -205,8 +205,6 @@ public class Game
     public int findOpenRow(int col)
     {
         int r=0;
-        if(board[r][col]!=null)
-            return -1;
         while(board[r][col]==null)
         {
             if(r==5)
@@ -215,7 +213,6 @@ public class Game
             }
             r++;
         }
-
         return r-1;
     }
     /**
