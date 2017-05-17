@@ -13,6 +13,7 @@ public class Testing
         gam.move(0);
         System.out.println(gam.findOpenRow(0));
         
+        System.out.println(gam.isGameOver());
         //System.out.println(gam.getBoard()[5][0]);
         //System.out.println(gam.getBoard()[4][0]);
     }

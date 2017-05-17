@@ -8,7 +8,7 @@ import java.awt.event.*;
 public class DisplayImage extends Applet implements ActionListener{  
     //graphisc
     private Image bgimage, leftllama, rightalpaca, asteroid1, asteroid2, gameboardborder, header,
-    currentplayergraphic, player1icon, player2icon, restartbutton, menubutton, appletborder;
+    currentplayergraphic, player1icon, player2icon, restartbutton, menubutton, appletborder, winner, tie;
     
     //players
     private Player p1 = new Player(Color.red);
@@ -67,7 +67,9 @@ public class DisplayImage extends Applet implements ActionListener{
         player2icon = getImage(getDocumentBase(), "player2icon.png");
         //restartbutton = getImage(getDocumentBase(), "restartbutton.png");
         //menubutton = getImage(getDocumentBase(), "menubutton.png");
-
+        tie=getImage(getDocumentBase(),"tie.png");
+        winner=getImage(getDocumentBase(),"winner.png");
+        
         //music
         AudioClip music = getAudioClip(getDocumentBase(), "space.wav");
         music.play();
@@ -94,13 +96,28 @@ public class DisplayImage extends Applet implements ActionListener{
         
         //draws the current player graphics
         grid.draw(g);
-        if (game.whosUp().getColor()==p1.getColor())
-            g.drawImage( player1icon, (1000/3), ((400/3)+25), this);
-        else 
-            g.drawImage( player2icon, (1000/3), ((400/3)+25), this);
-            
-        game.DrawBoard(g);
-        
+        if (game.isGameOver()==false)
+        {
+            if (game.whosUp().getColor()==p1.getColor())
+                g.drawImage( player1icon, (1000/3), ((400/3)+25), this);
+            else 
+                g.drawImage( player2icon, (1000/3), ((400/3)+25), this);
+            game.DrawBoard(g);
+        }
+        else
+        {
+            if(game.isFull()==false)
+            {
+                game.next();
+                g.drawImage(winner,(1000/3)-40, (-20),this);
+                if(game.whosUp().getColor()==p1.getColor())
+                    g.drawImage(player1icon,(1000/3)+125, ((400/3)+25),this);
+                else
+                    g.drawImage(player2icon,(1000/3)+125, ((400/3)+25),this);
+            }
+            else
+                g.drawImage(tie,(1000/3), ((400/3)+25),this);
+        }
     }  
     public void actionPerformed(ActionEvent e)
     {

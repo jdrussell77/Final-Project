@@ -66,8 +66,11 @@ public class Game
         {
             for(int c=0;c<board[r].length-3;c++)
             {
-                if(board[r][c].getColor()==board[r][c+1].getColor() && board[r][c].getColor()==board[r][c+2].getColor() && board[r][c].getColor()==board[r][c+3].getColor())        
-                    return true;
+                if(board[r][c]!=null && board[r][c+1]!=null && board[r][c+2]!=null && board[r][c+3]!=null)
+                {
+                    if(board[r][c].getColor()==board[r][c+1].getColor() && board[r][c].getColor()==board[r][c+2].getColor() && board[r][c].getColor()==board[r][c+3].getColor())        
+                        return true;
+                }
             }
         }
         return false;
@@ -83,8 +86,11 @@ public class Game
         {
             for(int c=0;c<board[r].length;c++)
             {          
-                if(board[r][c].getColor()==board[r+1][c].getColor() && board[r][c].getColor()==board[r+2][c].getColor() && board[r][c].getColor()==board[r+3][c].getColor())        
-                    return true;
+                if(board[r][c]!=null && board[r+1][c]!=null && board[r+2][c]!=null && board[r+3][c]!=null)
+                {
+                    if(board[r][c].getColor()==board[r+1][c].getColor() && board[r][c].getColor()==board[r+2][c].getColor() && board[r][c].getColor()==board[r+3][c].getColor())        
+                        return true;
+                }
             }
         }
         return false;
@@ -133,9 +139,11 @@ public class Game
         if(this.VerticalCheck())
             return true;
         
+        //Checking Diagonals
+        /*
         if(this.DiagonalsCheck())
             return true;
-            
+        */
         return false;
     }
     /**
