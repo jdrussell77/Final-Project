@@ -106,15 +106,17 @@ public class Game
         // ascendingDiagonalCheck 
         for (int r=3; r<board.length; r++){
             for (int c=0; c<board[r].length-3; c++){
-                if (this.board[r][c] == this.board[r-1][c+1] && this.board[r][c] == this.board[r-2][c+2] && this.board[r][c] == this.board[r-3][c+3])
-                    return true;
+                if(board[r][c]!=null && board[r-1][c+1]!=null && board[r-2][c+2]!=null && board[r-3][c+3]!=null)
+                    if (this.board[r][c].getColor() == this.board[r-1][c+1].getColor() && this.board[r][c].getColor() == this.board[r-2][c+2].getColor() && this.board[r][c].getColor() == this.board[r-3][c+3].getColor())
+                        return true;
             }
         }
         // descendingDiagonalCheck
         for (int r=3; r<board.length; r++){
             for (int c=3; c<board[r].length; c++){
-                if (this.board[r][c] == this.board[r-1][c-1] && this.board[r][c] == this.board[r-2][c-2] && this.board[r][c] == this.board[r-3][c-3])
-                    return true;
+                if(board[r][c]!=null && board[r-1][c-1]!=null && board[r-2][c-2]!=null && board[r-3][c-3]!=null)
+                    if (this.board[r][c].getColor() == this.board[r-1][c-1].getColor() && this.board[r][c].getColor() == this.board[r-2][c-2].getColor() && this.board[r][c].getColor() == this.board[r-3][c-3].getColor())
+                        return true;
             }
         }
         return false;
@@ -139,11 +141,10 @@ public class Game
         if(this.VerticalCheck())
             return true;
         
-        //Checking Diagonals
-        /*
+        //Checking Diagonals        
         if(this.DiagonalsCheck())
             return true;
-        */
+        
         return false;
     }
     /**
@@ -254,7 +255,8 @@ public class Game
         {
             for(int c=0;c<board[r].length;c++)
             {
-                board[r][c].draw(g);
+                if(board[r][c]!=null)
+                    board[r][c].draw(g);
             }
         }
     }

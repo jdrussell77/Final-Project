@@ -11,3 +11,5 @@ DEPENDENCIES:
 HOW TO START THIS PROJECT: compile and run DisplayImage
 AUTHORS: Sam, Sasha, Jake
 USER INSTRUCTIONS:
+Press the buttons (Col 1-7) to place a piece
+Only go when it displays your player

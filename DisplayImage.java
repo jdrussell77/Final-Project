@@ -1,4 +1,4 @@
-
+//Sam Piazza, Sasha Fenton
 import java.awt.*;  
 import java.applet.*;  
 import java.io.*;
@@ -19,7 +19,6 @@ public class DisplayImage extends Applet implements ActionListener{
     
     //gameboard
     private Grid grid=new Grid(300, (700/3),300,350,Color.white);
-    private Circle [][] board=new Circle[6][7];
     
     private Button col1,col2,col3,col4,col5,col6,col7;
     
@@ -117,6 +116,7 @@ public class DisplayImage extends Applet implements ActionListener{
             }
             else
                 g.drawImage(tie,(1000/3), ((400/3)+25),this);
+            game.DrawBoard(g);
         }
     }  
     public void actionPerformed(ActionEvent e)
