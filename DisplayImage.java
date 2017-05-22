@@ -9,19 +9,19 @@ public class DisplayImage extends Applet implements ActionListener{
     //graphisc
     private Image bgimage, leftllama, rightalpaca, asteroid1, asteroid2, gameboardborder, header,
     currentplayergraphic, player1icon, player2icon, restartbutton, menubutton, appletborder, winner, tie;
-    
+
     //players
     private Player p1 = new Player(Color.red);
     private Player p2 = new Player(Color.yellow);
-    
+
     //game
     private Game game=new Game(p1, p2);
-    
+
     //gameboard
     private Grid grid=new Grid(300, (700/3),300,350,Color.white);
-    
+
     private Button col1,col2,col3,col4,col5,col6,col7;
-    
+
     public void init() {  
         //sets applet size
         setSize (900, 600);
@@ -35,7 +35,7 @@ public class DisplayImage extends Applet implements ActionListener{
         col5=new Button("Col 5");
         col6=new Button("Col 6");
         col7=new Button("Col 7");
-        
+
         add(col1);add(col2);add(col3);add(col4);add(col5);add(col6);add(col7);
         col1.setBounds(303,((700/3)-30),40,20);
         col2.setBounds(347,((700/3)-30),40,20);
@@ -45,7 +45,7 @@ public class DisplayImage extends Applet implements ActionListener{
         col6.setBounds(523,((700/3)-30),40,20);
         col7.setBounds(566,((700/3)-30),40,20);
         setLayout(null);
-        
+
         col1.addActionListener(this);
         col2.addActionListener(this);
         col3.addActionListener(this);
@@ -53,7 +53,7 @@ public class DisplayImage extends Applet implements ActionListener{
         col5.addActionListener(this);
         col6.addActionListener(this);
         col7.addActionListener(this);
-        
+
         bgimage = getImage(getDocumentBase(),"spacebackground.png"); 
         leftllama = getImage(getDocumentBase(), "leftllama.png");
         rightalpaca = getImage(getDocumentBase(), "rightalpaca.png");
@@ -68,7 +68,7 @@ public class DisplayImage extends Applet implements ActionListener{
         //menubutton = getImage(getDocumentBase(), "menubutton.png");
         tie=getImage(getDocumentBase(),"tie.png");
         winner=getImage(getDocumentBase(),"winner.png");
-        
+
         //music
         AudioClip music = getAudioClip(getDocumentBase(), "space.wav");
         music.play();
@@ -87,12 +87,11 @@ public class DisplayImage extends Applet implements ActionListener{
         g.drawImage(asteroid1, -30, 0, this); //done
         g.drawImage(gameboardborder, 290, ((700/3)-10), this); //done
 
-        
         //g.drawImage(restartbutton, 100, (1600/3), this);
         //g.drawImage(menubutton, 700, (1600/3), this);
-        
+
         //draws the grid
-        
+
         //draws the current player graphics
         grid.draw(g);
         if (game.isGameOver()==false)
@@ -115,27 +114,29 @@ public class DisplayImage extends Applet implements ActionListener{
                     g.drawImage(player2icon,(1000/3)+125, ((400/3)+25),this);
             }
             else
-                g.drawImage(tie,(1000/3), ((400/3)+25),this);
+                g.drawImage(tie,(1000/3), 130,this);
             game.DrawBoard(g);
         }
     }  
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getSource()==col1)
-            game.move(0);
-        if(e.getSource()==col2)
-            game.move(1);
-        if(e.getSource()==col3)
-            game.move(2);
-        if(e.getSource()==col4)
-            game.move(3);
-        if(e.getSource()==col5)
-            game.move(4);
-        if(e.getSource()==col6)
-            game.move(5);
-        if(e.getSource()==col7)
-            game.move(6);
-        game.next();
-        repaint();
+        if (game.isGameOver()==false)
+        {
+            if(e.getSource()==col1)
+                game.move(0);
+            if(e.getSource()==col2)
+                game.move(1);
+            if(e.getSource()==col3)
+                game.move(2);
+            if(e.getSource()==col4)
+                game.move(3);
+            if(e.getSource()==col5)
+                game.move(4);
+            if(e.getSource()==col6)
+                game.move(5);
+            if(e.getSource()==col7)
+                game.move(6);
+            repaint();
+        }
     }
 }

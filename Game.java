@@ -184,6 +184,7 @@ public class Game
         {
             int openRow=this.findOpenRow(col);//Finds the lowest point in column
             board[openRow][col]=new Circle(findXcord(col),findYcord(openRow),radius,this.whosUp().getColor());
+            this.next();
         }
     }
     /**
